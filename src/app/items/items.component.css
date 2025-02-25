@@ -1,0 +1,506 @@
+/* General Styles */
+.header-section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Root Container for Items */
+.items-root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+/* Form Styles */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    /* Spacing between fields */
+    overflow-y: auto;
+    /* Allow scrolling for large content */
+}
+
+.form-row {
+    display: contents;
+    /* Allows grid layout to work */
+}
+
+.field {
+    margin-bottom: 20px;
+    /* Vertical spacing between fields */
+}
+
+label {
+    display: block;
+    /* Ensure labels are on their own line */
+    font-size: 14px;
+    /* Clear and readable font size */
+    margin-bottom: 5px;
+    /* Space between label and input */
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    /* Full width fields */
+    padding: 8px;
+    /* Inner spacing */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 4px;
+    /* Rounded corners */
+    box-sizing: border-box;
+    /* Includes padding in the width/height */
+    border-color: #218838;
+}
+
+textarea {
+    height: 100px;
+    /* Fixed height for text areas */
+}
+
+/* Add Button */
+.add-button {
+    grid-column: span 2;
+    /* Span the button across the form width */
+    background-color: #4CAF50;
+    height: fit-content;
+    color: white;
+    padding: 6px 10px;
+    max-width: fit-content;
+    /* Reduced padding for better size */
+    font-size: 14px;
+    /* Clear, smaller font */
+    border: none;
+    border-radius: 5px;
+    /* Subtle rounded corners */
+    cursor: pointer;
+    text-align: center;
+    margin: 30px;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+    
+}
+
+/* Table Container */
+.table-container {
+max-height: 70vh;
+    /* Adjust height as needed */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+    display: block;
+}
+
+/* Table Styles */
+.item-table {
+    display: block;
+    width: 100%;
+}
+.item-table thead {
+    display: table-header-group;
+    position: sticky;
+    top: 0;
+    background-color: green;
+    /* Match your header color */
+    z-index: 1000;
+}
+
+.item-table th {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.item-table td {
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+.hover-row {
+    background-color: #f1f1f1;
+    /* Alternating row color */
+}
+
+/* Edit Button */
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    /* Compact size */
+    font-size: 13px;
+    /* Smaller font for better proportions */
+    border: none;
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+    /* Hover color */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .form-container {
+        grid-template-columns: 1fr;
+        /* Stack fields on small screens */
+    }
+
+    .add-button {
+        grid-column: span 2;
+        padding: 8px 16px;
+        /* Maintain responsive size */
+        font-size: 14px;
+        /* Adjust font size */
+    }
+
+    .table-container {
+        max-height: calc(100vh - 150px);
+        /* Adjust for smaller screens */
+    }
+}
+.confirmation-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    max-width: 300px;
+    margin: 20px auto;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.confirmation-card h3 {
+    color: #333;
+}
+
+.confirmation-card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ok-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.ok-button:hover {
+    background-color: #218838;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+.edit-sub-item-card {
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin-top: 1rem;
+}
+
+.edit-sub-item-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.edit-sub-item-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.edit-sub-item-table th,
+.edit-sub-item-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.edit-sub-item-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-sub-item-table td {
+  background-color: #f5f5f5;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 4px;
+  margin-top: 30px;
+  cursor: pointer;
+  height: fit-content;
+  width: fit-content;
+  
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}
+.edit-sub-item-card {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.edit-sub-item-card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .edit-sub-item-card {
+        width: 90%;
+    }
+}
+/* Existing CSS */
+
+.add-pincode-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.add-pincode-card h3 {
+    margin-bottom: 20px;
+}
+
+.add-pincode-card .form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-pincode-card .field {
+    flex: 1;
+}
+
+.add-pincode-card .field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-pincode-card .field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-pincode-card .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.add-pincode-card .add-button,
+.add-pincode-card .close-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-pincode-card .add-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.add-pincode-card .close-button {
+    background-color: #dc3545;
+    color: white;
+}
+/*suggestions*/ 
+.suggestion-box {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 10px;
+}
+
+.suggestion-box input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.pincode-list div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    /* Optional: adds a subtle separator */
+}
+
+.pincode-list label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Increased spacing for better alignment */
+    width: 100%;
+    justify-content: flex-start;
+    /* Ensures checkbox is on the left */
+}
+
+.pincode-list input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.2);
+    /* Slightly larger for better visibility */
+    margin-right: 5px;
+    /* Space between checkbox and pincode */
+}
+/* sub */
+.modal-overlay {
+    z-index: 1050 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.modal-content {
+    background: white;
+    padding: 15px;
+    /* Reduced padding */
+    border-radius: 6px;
+    /* Slightly smaller border radius */
+    width: 300px;
+    /* Reduced width */
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    /* Reduced margin */
+}
+
+.rounded-button,
+.cancel-button {
+    padding: 6px 10px;
+    /* Smaller buttons */
+    font-size: 14px;
+    /* Adjust font size */
+    border-radius: 4px;
+    /* Slightly smaller rounded corners */
+}
+
+.rounded-button {
+    background-color:#28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

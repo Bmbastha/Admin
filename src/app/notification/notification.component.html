@@ -1,0 +1,37 @@
+<div class="notification-container">
+  <h1 class="main-heading">Update Notification</h1>
+
+  <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-field">
+      <label for="notificationTitle">Notification Title</label>
+      <input
+        id="notificationTitle"
+        formControlName="notificationTitle"
+        type="text"
+        placeholder="Enter Notification Title"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="notificationDescription">Notification Description</label>
+      <input
+        id="notificationDescription"
+        formControlName="notificationDescription"
+        type="text"
+        placeholder="Enter Notification Description"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="posterUrl">Notification Poster URL</label>
+      <input
+        id="posterUrl"
+        formControlName="posterUrl"
+        type="text"
+        placeholder="Enter Poster URL"
+      />
+    </div>
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</div>

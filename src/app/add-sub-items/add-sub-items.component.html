@@ -1,0 +1,32 @@
+<div class="banner-container">
+  <h2 class="banner-heading">Add Sub-Items</h2>
+
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <div class="banner-url-container">
+      <label for="itemId">Item ID:</label>
+      <input id="itemId" [(ngModel)]="subItemData.item_id" name="item_id" type="number" required />
+    </div>
+
+    <div class="banner-url-container">
+      <label for="quantity">Quantity:</label>
+      <input id="quantity" [(ngModel)]="subItemData.quantity" name="quantity" type="number" step="0.01" required />
+    </div>
+
+    <div class="banner-url-container">
+      <label for="price">Price:</label>
+      <input id="price" [(ngModel)]="subItemData.price" name="price" type="number" step="0.01" required />
+    </div>
+
+    <div class="banner-url-container">
+      <label for="units">Units:</label>
+      <input id="units" [(ngModel)]="subItemData.units" name="units" type="number" required />
+    </div>
+
+    <div class="banner-url-container">
+      <label for="discount">Discount:</label>
+      <input id="discount" [(ngModel)]="subItemData.discount" name="discount" type="number" step="0.01" required />
+    </div>
+
+    <button type="submit" class="rounded-button">Add Sub-Items</button>
+  </form>
+</div>

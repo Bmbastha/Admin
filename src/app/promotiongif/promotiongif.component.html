@@ -1,0 +1,15 @@
+<div class="promotional-gif-container">
+  <h2 class="promotional-gif-heading">Promotional GIFs</h2>
+  <div class="gif-url-container">
+    <label for="gif-url">GIF URL:</label>
+    <input type="text" id="gif-url" [(ngModel)]="gifUrl" placeholder="Enter GIF URL" />
+  </div>
+  <div class="status-container">
+    <label for="gif-status">Status:</label>
+    <select id="gif-status" [(ngModel)]="gifStatus">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+  </div>
+  <button (click)="saveGif()" class="rounded-button">Save</button>
+</div>

@@ -1,0 +1,31 @@
+
+
+
+<div *ngIf="showEditCard" class="edit-card">
+  <h3>Sub-Item Details for Item ID: {{ itemId }}</h3>
+  <table class="subitem-table">
+    <thead>
+      <tr>
+        <th>IQ ID</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Units</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subItem of subItems">
+        <td>{{ subItem.iq_id }}</td>
+        <td>{{ subItem.quantity }}</td>
+        <td>{{ subItem.price }}</td>
+        <td>{{ subItem.discount }}</td>
+        <td>{{ subItem.units }}</td>
+        <td>
+          <button class="edit-button" (click)="editSubItem(subItem)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="close-button" (click)="closeEditCard()">Close</button>
+</div>

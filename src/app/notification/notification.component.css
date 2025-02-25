@@ -1,0 +1,76 @@
+.notification-container {
+    padding: 20px;
+    text-align: center;
+    /* Centering the text */
+}
+
+.main-heading {
+    font-size: 2rem;
+    /* Approximately 32px */
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    /* Spacing below the main heading */
+    text-align: left;
+    /* Aligning to the top-left */
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    /* Approximately 24px */
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0;
+    /* Spacing above and below the sub-heading */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centering the form */
+    margin-left: 20px;
+    /* Slight indentation to the right */
+}
+
+.form-field {
+    margin: 15px 0;
+    /* Uniform spacing between fields */
+    width: 100%;
+    /* Full width */
+}
+
+label {
+    font-weight: bold;
+    color: #000;
+    display: block;
+    /* Ensuring the label is above the input */
+    margin-bottom: 5px;
+    /* Spacing between label and input */
+}
+
+input {
+    border: 2px solid #5fb95f;
+    /* Green border */
+    border-radius: 8px;
+    /* Rounded corners */
+    width: 50%;
+    height: 45px;
+    /* Full width */
+    padding: 10px;
+    /* Sufficient padding */
+    background-color: #fff;
+    block-size: auto;
+    /* White background */
+}
+
+.submit-button {
+    margin-top: 20px;
+    /* Spacing above the button */
+    padding: 10px 20px;
+    /* Button padding */
+    font-size: 1rem;
+    /* Button font size */
+    cursor: pointer;
+    /* Pointer cursor for button */
+}

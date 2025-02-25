@@ -1,0 +1,34 @@
+<div class="banner-container">
+  <h1 class="banner-heading">Add New Brand</h1>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Brand Name -->
+    <div class="banner-url-container">
+      <label for="brandName">Brand Name:</label>
+      <input
+        id="brandName"
+        type="text"
+        [(ngModel)]="brand.name"
+        name="brandName"
+        placeholder="Enter Brand Name"
+        required
+      />
+    </div>
+
+    <!-- Brand Images -->
+    <div class="banner-url-container">
+      <label for="brandImages">Brand Images (Comma Separated URLs):</label>
+      <input
+        id="brandImages"
+        type="text"
+        [(ngModel)]="brand.images"
+        name="brandImages"
+        placeholder="Enter Image URLs"
+        required
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="rounded-button">Submit</button>
+  </form>
+</div>

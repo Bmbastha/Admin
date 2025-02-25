@@ -1,0 +1,5 @@
+.main-content {
+    margin-top: 60px;
+    /* Add margin to avoid overlapping with the fixed navbar */
+    padding: 20px;
+}

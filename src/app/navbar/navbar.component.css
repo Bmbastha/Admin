@@ -1,0 +1,48 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: solid 1px #7b7474;
+    z-index: 1000;
+    justify-content: space-between;
+    /* This ensures space between left and right elements */
+}
+
+.logo-container {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.company-name {
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.logout-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 100px;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}

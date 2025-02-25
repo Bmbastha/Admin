@@ -1,0 +1,127 @@
+
+<div class="delivery-container">
+  <h2>Delivery</h2>
+
+ <div class="filter-section">
+  <div class="filter-group pincode-group">
+  <label>Pincode:</label>
+  <input type="number"
+         placeholder="Enter 6-digit area"
+         [(ngModel)]="area"
+         (input)="fetchPincodeSuggestions()"
+         class="input-box"/>
+
+  <!-- Pincode Suggestions Dropdown -->
+  <ul class="suggestions" *ngIf="pincodeSuggestions.length > 0">
+    <li *ngFor="let pincode of pincodeSuggestions" 
+        (click)="selectPincode(pincode)">
+      {{ pincode }}
+    </li>
+  </ul>
+</div>
+  
+    <div class="filter-group">
+      <label>Status:</label>
+      <select [(ngModel)]="status" class="dropdown">
+        <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+
+   
+    <div class="filter-group">
+      <label>Skip:</label>
+      <select [(ngModel)]="skip" class="dropdown">
+        <option *ngFor="let num of skipOptions" [value]="num">{{ num }}</option>
+      </select>
+    </div>
+
+    
+    <div class="filter-group">
+      <label>Limit:</label>
+      <select [(ngModel)]="limit" class="dropdown">
+        <option *ngFor="let num of limitOptions" [value]="num">{{ num }}</option>
+      </select>
+    </div>
+
+   
+    <button (click)="searchOrders()" class="search-btn">Search</button>
+  </div>
+
+  
+  <table class="orders-table" *ngIf="orders.length > 0">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>User ID</th>
+        <th>Status</th>
+        <th>Total Price</th>
+        <th>Ordered Date</th>
+        <th>Delivery Address</th>
+        <th>Payment Method</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.uid }}</td>
+        <td>{{ order.order_status }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.ordered_date | date:'short' }}</td>
+        <td>{{ order.delivery_address }}</td>
+        <td>{{ order.payment_method }}</td>
+        <td class="action-buttons">
+          <button (click)="assignDelivery(order)" class="assign-btn">Assign Delivery Partner</button>
+          <button (click)="openUpdateStatus(order)" class="update-btn">Update Status</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+ <div class="agent-card" *ngIf="showAgentCard">
+    <h3>Available Delivery Agents</h3>
+    <table class="agents-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Agent ID</th>
+          <th>Mobile</th>
+          <th>Company Name</th>
+          <th>Created On</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agent of agents">
+          <td>{{ agent.name }}</td>
+          <td>{{ agent.id }}</td>
+          <td>{{ agent.mobile }}</td>
+          <td>{{ agent.company_name || 'N/A' }}</td>
+          <td>{{ agent.created_on | date:'short' }}</td>
+          <td>
+            <button class="assign-btn" (click)="confirmAssignment(agent)">Assign</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="close-btn" (click)="showAgentCard = false">Close</button>
+  </div>
+<div class="status-card" *ngIf="showStatusCard">
+  <h3>Update Order Status</h3>
+  <form>
+    <label>User ID:</label>
+    <input type="text" [(ngModel)]="selectedOrder.uid" name="uid" readonly class="input-box" />
+
+    <label>Order ID:</label>
+    <input type="text" [(ngModel)]="selectedOrder.id" name="id" readonly class="input-box" />
+
+    <label>Order Status:</label>
+    <select [(ngModel)]="selectedOrder.order_status" name="order_status" class="dropdown">
+      <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+    </select>
+
+    <button type="button" (click)="updateOrderStatus()" class="update-btn">Update</button>
+    <button type="button" (click)="showStatusCard = false" class="close-btn">Close</button>
+  </form>
+</div>

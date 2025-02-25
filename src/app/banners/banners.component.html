@@ -1,0 +1,15 @@
+<div class="banner-container">
+  <h2 class="banner-heading">Banners</h2>
+  <div class="banner-url-container">
+    <label for="banner-url">Banner URL:</label>
+    <input type="text" id="banner-url" [(ngModel)]="bannerUrl" placeholder="Enter banner URL" />
+  </div>
+  <div class="status-container">
+    <label for="banner-status">Status:</label>
+    <select id="banner-status" [(ngModel)]="bannerStatus">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+  </div>
+  <button (click)="saveBanner()" class="rounded-button">Save</button>
+</div>

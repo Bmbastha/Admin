@@ -1,0 +1,91 @@
+/* General Reset */
+* {
+    margin-top: 60px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Dashboard Container */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Static Vertical Sidebar for Icons */
+.icon-bar {
+    width: 100px;
+    background-color: #4AC41B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.icon-bar .icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    margin: 10px 0;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+
+.icon-bar .icon-btn.active,
+.icon-bar .icon-btn:hover {
+    background-color: #abee90;
+    width: 100%;
+    text-align: center;
+}
+.icon-bar .icon-btn.active,
+.icon-bar .icon-btn:hover {
+    background-color: #abee90;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+}
+
+/* Sidebar for Menu Items */
+.sidebar {
+    width: 200px;
+    background-color:#abee90;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.sidebar.open {
+    left: 60px;
+    /* Appears next to the icon bar */
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 300px;
+    /* Space for icon bar */
+    padding: 20px;
+    flex-grow: 1;
+    overflow: auto;
+}

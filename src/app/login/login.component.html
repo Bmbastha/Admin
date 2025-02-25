@@ -1,0 +1,31 @@
+<div class="login-container">
+    <h1 class="main-heading">Login</h1>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="sendOtp()" class="form-container">
+        <div class="form-field">
+            <label for="countryCode">Country Code</label>
+            <select id="countryCode" formControlName="countryCode">
+                <option value="+91">India (+91)</option>
+                <option value="+1">USA (+1)</option>
+                <option value="+44">UK (+44)</option>
+                <!-- Add more country codes as needed -->
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label for="mobileNumber">Mobile Number</label>
+            <input id="mobileNumber" formControlName="mobileNumber" type="text" placeholder="Enter your mobile number" />
+        </div>
+
+        <button type="submit" class="send-otp-button">Send OTP</button>
+    </form>
+
+    <form *ngIf="otpSent" [formGroup]="otpForm" (ngSubmit)="verifyOtp()" class="otp-container">
+        <div class="form-field">
+            <label for="otp">OTP</label>
+            <input id="otp" formControlName="otp" type="text" placeholder="Enter OTP" />
+        </div>
+
+        <button type="submit" class="verify-button">Verify</button>
+    </form>
+</div>

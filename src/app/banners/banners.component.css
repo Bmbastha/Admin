@@ -1,0 +1,59 @@
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-heading {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00b300;
+}
+
+.banner-url-container,
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.banner-url-container input {
+    flex: 0 0 auto;
+    border: 2px solid #00b300;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    width: 300px;
+}
+
+.status-container select {
+    flex: 0 0 auto;
+    border: 2px solid #00b300;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    width: auto;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em;
+    padding-right: 2rem;
+}
+
+.rounded-button {
+    background-color: #00b300;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
